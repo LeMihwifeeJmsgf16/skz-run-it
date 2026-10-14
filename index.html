@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Stray Kids《RUN IT》首爾場舞台專題，介紹團體、歌曲概念與現場演出。">
+  <title>RUN IT｜Stray Kids 舞台專題</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #ff2438;
+      --black: #090909;
+      --panel: #141414;
+      --white: #f5f3f0;
+      --gray: #a3a3a3;
+      --line: rgba(255,255,255,.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "Noto Sans TC", sans-serif;
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    ::selection {
+      background: var(--red);
+      color: white;
+    }
+
+    /* 導覽列 */
+    .navbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 7%;
+      background: rgba(9,9,9,.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.65rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: .83rem;
+      color: #d2d2d2;
+    }
+
+    .nav-links a {
+      transition: color .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    /* 首頁 */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 140px 9% 100px;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        linear-gradient(90deg, rgba(7,7,7,.97) 0%,
+          rgba(7,7,7,.77) 48%, rgba(7,7,7,.35) 100%),
+        linear-gradient(0deg, var(--black), transparent 35%),
+        url("https://img.youtube.com/vi/afNxnQ-MBQc/maxresdefault.jpg")
+        center/cover no-repeat,
+        #181010;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 65vw;
+      height: 65vw;
+      top: -30%;
+      right: -20%;
+      border-radius: 50%;
+      background: rgba(255,20,45,.15);
+      filter: blur(90px);
+      animation: pulse 5s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .12;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(255,255,255,.09) 4px
+      );
+    }
+
+    .hero-content {
+      max-width: 850px;
+      animation: rise .9s ease both;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--red);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .hero h1 {
+      margin: 22px 0 0;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(5rem, 15vw, 12rem);
+      font-weight: 900;
+      line-height: .82;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 .outline {
+      display: block;
+      color: var(--red);
+      -webkit-text-stroke: 1px var(--red);
+    }
+
+    .hero-subtitle {
+      margin-top: 30px;
+      color: #e0e0e0;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .hero-description {
+      max-width: 510px;
+      margin-top: 12px;
+      color: #b8b8b8;
+      font-size: .95rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 49px;
+      padding: 12px 24px;
+      border: 1px solid var(--red);
+      font-size: .88rem;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: white;
+      border-color: white;
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: rgba(0,0,0,.3);
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: black;
+    }
+
+    .hero-index {
+      position: absolute;
+      right: 7%;
+      bottom: 12%;
+      color: rgba(255,255,255,.65);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: .9rem;
+      letter-spacing: 2px;
+      writing-mode: vertical-rl;
+    }
+
+    /* 紅色文字跑馬燈 */
+    .marquee {
+      overflow: hidden;
+      padding: 13px 0;
+      background: var(--red);
+      color: white;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 26s linear infinite;
+    }
+
+    .marquee-track span {
+      padding-right: 32px;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    /* 各區塊共用樣式 */
+    .section {
+      padding: 105px 9%;
+    }
+
+    .section-heading {
+      margin-bottom: 46px;
+    }
+
+    .section-number {
+      color: var(--red);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+      margin-top: 8px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.08;
+    }
+
+    .section-heading h2 span {
+      color: var(--red);
+    }
+
+    .section-heading p {
+      max-width: 650px;
+      margin-top: 18px;
+      color: var(--gray);
+      font-size: .95rem;
+    }
+
+    /* 團體介紹 */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .group-image {
+      position: relative;
+      overflow: hidden;
+      background: #1b1112;
+      border: 1px solid var(--line);
+    }
+
+    .group-image img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+
+    .group-image:hover img {
+      transform: scale(1.04);
+    }
+
+    .image-caption {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 38px 20px 15px;
+      background: linear-gradient(transparent, rgba(0,0,0,.85));
+      color: white;
+      font-size: .8rem;
+    }
+
+    .intro-copy h3 {
+      margin-bottom: 18px;
+      font-size: 1.55rem;
+      font-weight: 900;
+      line-height: 1.6;
+    }
+
+    .intro-copy h3 span {
+      color: var(--red);
+    }
+
+    .intro-copy p {
+      margin-bottom: 16px;
+      color: #b8b8b8;
+      font-size: .94rem;
+    }
+
+    .member-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .member-list span {
+      padding: 6px 12px;
+      border: 1px solid #393939;
+      color: #e0e0e0;
+      font-size: .76rem;
+      transition: .25s;
+    }
+
+    .member-list span:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    /* 歌曲概念 */
+    .concept {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 100% 30%,
+          rgba(163,0,22,.2), transparent 55%),
+        #101010;
+    }
+
+    .concept-layout {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .concept-quote {
+      padding: 34px;
+      border-left: 3px solid var(--red);
+      background: rgba(255,255,255,.035);
+    }
+
+    .concept-quote .quote-mark {
+      color: var(--red);
+      font-family: Georgia, serif;
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    .concept-quote h3 {
+      margin: 10px 0 18px;
+      font-size: 1.8rem;
+      line-height: 1.5;
+    }
+
+    .concept-quote p {
+      color: #bcbcbc;
+      font-size: .94rem;
+    }
+
+    .concept-cards {
+      display: grid;
+      gap: 14px;
+    }
+
+    .concept-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+      transition: .3s;
+    }
+
+    .concept-card:hover {
+      border-color: var(--red);
+      transform: translateX(5px);
+    }
+
+    .concept-card .card-num {
+      color: var(--red);
+      font-size: .85rem;
+      font-weight: 900;
+    }
+
+    .concept-card h3 {
+      margin: 5px 0;
+      font-size: 1.05rem;
+    }
+
+    .concept-card p {
+      color: var(--gray);
+      font-size: .86rem;
+    }
+
+    .concept-note {
+      margin-top: 25px;
+      color: #777;
+      font-size: .77rem;
+    }
+
+    /* 舞台介紹 */
+    .stage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .stage-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .stage-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #1c1112;
+      transition: transform .5s;
+    }
+
+    .stage-card:hover img {
+      transform: scale(1.035);
+    }
+
+    .stage-card-body {
+      padding: 25px;
+    }
+
+    .stage-tag {
+      color: var(--red);
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .stage-card h3 {
+      margin: 7px 0 12px;
+      font-size: 1.2rem;
+    }
+
+    .stage-card p {
+      color: var(--gray);
+      font-size: .9rem;
+    }
+
+    .stage-callout {
+      margin-top: 25px;
+      padding: 22px 25px;
+      border: 1px solid rgba(255,36,56,.35);
+      color: #d3d3d3;
+      font-size: .9rem;
+    }
+
+    .stage-callout strong {
+      color: var(--red);
+    }
+
+    /* 影片 */
+    .video-section {
+      background:
+        radial-gradient(ellipse at 50% 20%,
+          rgba(163,0,22,.18), transparent 60%),
+        #0d0d0d;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #171717;
+      border: 1px solid #3d2024;
+      box-shadow: 0 20px 80px rgba(255,0,30,.09);
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 22px;
+    }
+
+    .video-meta h3 {
+      font-size: 1.15rem;
+    }
+
+    .video-meta p {
+      color: var(--gray);
+      font-size: .82rem;
+    }
+
+    .youtube-link {
+      align-self: center;
+      color: var(--red);
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .youtube-link:hover {
+      color: white;
+    }
+
+    /* 結尾 */
+    .closing {
+      position: relative;
+      padding: 120px 8%;
+      overflow: hidden;
+      text-align: center;
+      background:
+        linear-gradient(rgba(8,8,8,.7), rgba(8,8,8,.96)),
+        url("https://img.youtube.com/vi/afNxnQ-MBQc/maxresdefault.jpg")
+        center / cover no-repeat,
+        #151010;
+    }
+
+    .closing .small-title {
+      color: var(--red);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .closing h2 {
+      margin: 15px 0 20px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(2.8rem, 8vw, 7rem);
+      font-weight: 900;
+      line-height: 1.05;
+    }
+
+    .closing h2 span {
+      color: var(--red);
+    }
+
+    .closing p {
+      color: #c5c5c5;
+      font-size: .9rem;
+    }
+
+    .closing .btn {
+      margin-top: 28px;
+    }
+
+    /* 頁尾 */
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 28px 7%;
+      border-top: 1px solid var(--line);
+      color: #777;
+      font-size: .75rem;
+    }
+
+    footer strong {
+      color: #ddd;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 50;
+      display: grid;
+      width: 43px;
+      height: 43px;
+      place-items: center;
+      border: 1px solid var(--red);
+      background: rgba(9,9,9,.88);
+      color: white;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: .25s;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* 捲動動畫 */
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes pulse {
+      from { transform: scale(.9); opacity: .65; }
+      to { transform: scale(1.12); opacity: 1; }
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes marquee {
+      to { transform: translateX(-50%); }
+    }
+
+    /* 手機版 */
+    @media (max-width: 760px) {
+      .navbar {
+        padding: 13px 5%;
+      }
+
+      .nav-links {
+        gap: 13px;
+        font-size: .75rem;
+      }
+
+      .logo {
+        font-size: 1.35rem;
+      }
+
+      .hero {
+        min-height: 88svh;
+        padding: 130px 7% 100px;
+        background-position: center, center, 58% center, center;
+      }
+
+      .hero h1 {
+        font-size: clamp(5rem, 21vw, 9rem);
+      }
+
+      .hero-index {
+        right: 5%;
+        bottom: 6%;
+      }
+
+      .section {
+        padding: 75px 7%;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+      }
+
+      .intro-grid,
+      .concept-layout,
+      .stage-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .intro-copy h3 {
+        font-size: 1.35rem;
+      }
+
+      .concept-quote {
+        padding: 25px;
+      }
+
+      .stage-card-body {
+        padding: 20px;
+      }
+
+      .closing {
+        padding: 90px 7%;
+      }
+
+      footer {
+        padding: 25px 7%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .nav-links {
+        gap: 9px;
+        font-size: .7rem;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+
+      .hero-buttons .btn {
+        padding: 11px 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ===== 新增：觀後心得量表 ===== */
+    .feedback {
+      background:
+        radial-gradient(ellipse at 0% 20%,
+          rgba(163,0,22,.2), transparent 55%),
+        #0d0d0d;
+    }
+
+    .feedback-box {
+      max-width: 780px;
+      padding: 38px;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--red);
+      background: var(--panel);
+    }
+
+    .field {
+      margin-bottom: 26px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--red);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .field input,
+    .field textarea {
+      display: block;
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #393939;
+      border-radius: 0;
+      background: #0b0b0b;
+      color: var(--white);
+      font: inherit;
+      font-size: .95rem;
+      transition: border-color .25s, box-shadow .25s;
+    }
+
+    .field textarea {
+      min-height: 200px;
+      resize: vertical;
+      line-height: 1.8;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #666;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(255,36,56,.15);
+    }
+
+    .field.invalid input,
+    .field.invalid textarea {
+      border-color: var(--red);
+    }
+
+    .field-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 8px;
+      font-size: .78rem;
+    }
+
+    .field-hint {
+      color: #777;
+    }
+
+    .field-error {
+      min-height: 1.4em;
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .field-count {
+      color: #777;
+      white-space: nowrap;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .form-actions .btn {
+      cursor: pointer;
+    }
+
+    .feedback-result {
+      display: none;
+      max-width: 780px;
+      padding: 38px;
+      border: 1px solid rgba(255,36,56,.35);
+      border-top: 3px solid var(--red);
+      background: var(--panel);
+    }
+
+    .feedback-result.show {
+      display: block;
+      animation: rise .6s ease both;
+    }
+
+    .result-tag {
+      color: var(--red);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .feedback-result h3 {
+      margin: 8px 0 22px;
+      font-size: 1.5rem;
+    }
+
+    .result-row {
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .result-label {
+      margin-bottom: 4px;
+      color: var(--gray);
+      font-size: .78rem;
+      letter-spacing: 1px;
+    }
+
+    .result-value {
+      color: #e8e8e8;
+      font-size: .95rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .result-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .result-actions .btn {
+      cursor: pointer;
+    }
+
+    @media (max-width: 760px) {
+      .feedback-box,
+      .feedback-result {
+        padding: 25px 20px;
+      }
+
+      .form-actions .btn,
+      .result-actions .btn {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 導覽列 -->
+  <header class="navbar">
+    <a href="#home" class="logo">STRAY<span>KIDS</span></a>
+
+    <nav class="nav-links" aria-label="主要導覽">
+      <a href="#about">團體介紹</a>
+      <a href="#concept">歌曲概念</a>
+      <a href="#stage">舞台解析</a>
+      <a href="#video">觀看影片</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- 首頁 -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Stray Kids 演唱會專題</div>
+
+        <h1>
+          RUN
+          <span class="outline">IT.</span>
+        </h1>
+
+        <div class="hero-subtitle">
+          首爾場 · 舞台特輯
+        </div>
+
+        <p class="hero-description">
+          從首爾出發，向世界奔馳。
+          不被定義，不停下腳步，讓每一次登場都成為新的起點。
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#video" class="btn btn-primary">
+            ▶ 立即觀看舞台
+          </a>
+          <a href="#concept" class="btn btn-secondary">
+            探索歌曲概念 ↘
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-index">首爾 · 世界巡迴 · 2026</div>
+    </section>
+
+    <!-- 跑馬燈 -->
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>Stray Kids 無所不在 · RUN IT ✦</span>
+        <span>Stray Kids 無所不在 · RUN IT ✦</span>
+        <span>Stray Kids 無所不在 · RUN IT ✦</span>
+        <span>Stray Kids 無所不在 · RUN IT ✦</span>
+      </div>
+    </div>
+
+    <!-- 團體介紹 -->
+    <section class="section" id="about">
+      <div class="section-heading reveal">
+        <div class="section-number">01 / 團體介紹</div>
+        <h2>認識 <span>Stray Kids</span></h2>
+        <p>八個不同的聲音，組成一個無法被複製的團體。</p>
+      </div>
+
+      <div class="intro-grid">
+        <div class="group-image reveal">
+          <img
+            src="https://img.youtube.com/vi/afNxnQ-MBQc/maxresdefault.jpg"
+            alt="RUN IT 舞台影片縮圖"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://img.youtube.com/vi/afNxnQ-MBQc/hqdefault.jpg';"
+          >
+          <div class="image-caption">
+            Stray Kids · RUN IT 首爾場
+          </div>
+        </div>
+
+        <div class="intro-copy reveal">
+          <h3>
+            做自己的音樂，<br>
+            <span>走自己的路。</span>
+          </h3>
+
+          <p>
+            Stray Kids（簡稱 SKZ）是 JYP Entertainment
+            旗下的韓國男子團體，於 2018 年正式出道，
+            由 Bang Chan、Lee Know、Changbin、Hyunjin、
+            Han、Felix、Seungmin 和 I.N 八位成員組成。
+          </p>
+
+          <p>
+            他們以強烈的音樂風格、鮮明的個人特色與充滿能量的舞台
+            表現受到關注。團體內的製作小組 3RACHA，
+            由 Bang Chan、Changbin 和 Han 組成，
+            參與多首作品的詞曲創作與製作。
+          </p>
+
+          <p>
+            對 Stray Kids 而言，音樂不只是跟隨既有的規則，
+            更是表達自我、探索可能性，以及不斷突破的方式。
+          </p>
+
+          <div class="member-list" aria-label="團體成員">
+            <span>Bang Chan</span>
+            <span>Lee Know</span>
+            <span>Changbin</span>
+            <span>Hyunjin</span>
+            <span>Han</span>
+            <span>Felix</span>
+            <span>Seungmin</span>
+            <span>I.N</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 歌曲概念 -->
+    <section class="section concept" id="concept">
+      <div class="section-heading reveal">
+        <div class="section-number">02 / 歌曲概念</div>
+        <h2>RUN IT 的<span>精神</span></h2>
+        <p>這不只是向前跑，更是決定自己要走向哪裡。</p>
+      </div>
+
+      <div class="concept-layout">
+        <div class="concept-quote reveal">
+          <div class="quote-mark">“</div>
+
+          <h3>從首爾出發，<br>走向全世界。</h3>
+
+          <p>
+            〈RUN IT〉描繪 Stray Kids 從首爾出發、
+            走向世界舞台的成長歷程。
+            面對挑戰與限制，他們選擇持續前進，
+            追求更高的目標，拓展自己的可能性。
+          </p>
+
+          <p style="margin-top: 15px;">
+            這首歌將一路累積的經驗與野心，
+            轉化成面向未來的宣言。
+            不是等待機會降臨，而是帶著自己的節奏繼續向前。
+          </p>
+        </div>
+
+        <div class="concept-cards">
+          <article class="concept-card reveal">
+            <div class="card-num">01 / 起點</div>
+            <h3>從自己的起點出發</h3>
+            <p>
+              從首爾走向更廣闊的世界，象徵團體一路成長，
+              也代表不忘記初心，繼續探索新的可能。
+            </p>
+          </article>
+
+          <article class="concept-card reveal">
+            <div class="card-num">02 / 動能</div>
+            <h3>持續前進的推進力</h3>
+            <p>
+              銅管樂、行進鼓與世界節奏共同構成強烈的音樂動能，
+              讓整首歌帶有鮮明的氣勢與前進感。
+            </p>
+          </article>
+
+          <article class="concept-card reveal">
+            <div class="card-num">03 / 突破</div>
+            <h3>不讓自己停在原地</h3>
+            <p>
+              歌曲傳達突破困境、追求勝利與更高目標的意志，
+              而不是滿足於已經取得的成就。
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <p class="concept-note">
+        ※ 本段為歌曲概念的中文整理與詮釋，並非完整歌詞。
+      </p>
+    </section>
+
+    <!-- 舞台解析 -->
+    <section class="section" id="stage">
+      <div class="section-heading reveal">
+        <div class="section-number">03 / 舞台解析</div>
+        <h2>讓音樂<span>登上舞台</span></h2>
+        <p>
+          當歌曲走出耳機、進入現場，音樂的力量也有了新的觀看方式。
+        </p>
+      </div>
+
+      <div class="stage-grid">
+        <article class="stage-card reveal">
+          <img
+            src="https://img.youtube.com/vi/afNxnQ-MBQc/maxresdefault.jpg"
+            alt="RUN IT 首爾場舞台影片縮圖"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://img.youtube.com/vi/afNxnQ-MBQc/hqdefault.jpg';"
+          >
+          <div class="stage-card-body">
+            <div class="stage-tag">01 / 音樂表現</div>
+            <h3>聲音帶來的推進感</h3>
+            <p>
+              〈RUN IT〉以銅管樂、行進鼓和世界節奏建立音樂的厚度。
+              這些元素讓歌曲兼具節奏感、氣勢與鮮明的辨識度。
+            </p>
+          </div>
+        </article>
+
+        <article class="stage-card reveal">
+          <img
+            src="https://img.youtube.com/vi/afNxnQ-MBQc/hqdefault.jpg"
+            alt="RUN IT 舞台影片預覽"
+            loading="lazy"
+          >
+          <div class="stage-card-body">
+            <div class="stage-tag">02 / 現場演出</div>
+            <h3>從表演感受歌曲精神</h3>
+            <p>
+              觀看下方首爾場影片時，可以留意成員如何呈現歌曲的情緒、
+              節奏與整體氣勢。實際的走位、編舞及燈光安排，
+              以影片中能觀察到的內容為準。
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="stage-callout reveal">
+        <strong>觀賞重點</strong><br>
+        音樂的節奏、成員的表演，以及現場畫面，
+        是如何共同傳達「持續前進」這個概念的？
+      </div>
+    </section>
+
+    <!-- 影片 -->
+    <section class="section video-section" id="video">
+      <div class="section-heading reveal">
+        <div class="section-number">04 / 精彩舞台</div>
+        <h2>一起觀看 <span>RUN IT</span></h2>
+        <p>
+          現在，把文字放到一旁，一起看看這場 RUN IT 舞台。
+        </p>
+      </div>
+
+      <div class="video-frame reveal">
+        <iframe
+          src="https://www.youtube.com/embed/afNxnQ-MBQc"
+          title="Stray Kids RUN IT 首爾場舞台"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="video-meta reveal">
+        <div>
+          <h3>Stray Kids — RUN IT</h3>
+          <p>首爾場 · 舞台影片</p>
+        </div>
+
+        <a
+          class="youtube-link"
+          href="https://www.youtube.com/watch?v=afNxnQ-MBQc"
+          target="_blank"
+          rel="noopener noreferrer">
+          前往 YouTube 觀看 ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- 結尾 -->
+    <section class="closing">
+      <div class="small-title">Stray Kids 無所不在</div>
+
+      <h2>
+        持續前進，<br>
+        <span>永不停止。</span>
+      </h2>
+
+      <p>
+        從自己的起點出發，向著下一個目標前進。<br>
+        這就是 RUN IT 想傳達的精神。
+      </p>
+
+      <a href="#home" class="btn btn-primary">返回頁面頂端 ↑</a>
+    </section>
+
+    <!-- ===== 新增：觀後心得量表 ===== -->
+    <section class="section feedback" id="feedback">
+      <div class="section-heading reveal">
+        <div class="section-number">05 / 觀後心得量表</div>
+        <h2>寫下你的<span>觀後心得</span></h2>
+        <p>
+          看完 RUN IT 舞台之後，留下你的名字，
+          並寫下這場表演帶給你的感受與想法。
+        </p>
+      </div>
+
+      <!-- 填寫表單 -->
+      <div class="feedback-box reveal" id="feedbackBox">
+        <form id="feedbackForm" novalidate>
+          <div class="field" id="nameField">
+            <label for="nameInput">姓名</label>
+            <input
+              type="text"
+              id="nameInput"
+              name="name"
+              placeholder="請輸入你的姓名"
+              maxlength="30"
+              autocomplete="name"
+            >
+            <div class="field-meta">
+              <span class="field-error" id="nameError"></span>
+            </div>
+          </div>
+
+          <div class="field" id="reviewField">
+            <label for="reviewInput">觀後心得</label>
+            <textarea
+              id="reviewInput"
+              name="review"
+              placeholder="看完這場舞台，你有什麼感受？哪個畫面、聲音或表演最讓你印象深刻？"
+              maxlength="800"
+            ></textarea>
+            <div class="field-meta">
+              <span class="field-error" id="reviewError"></span>
+              <span class="field-count" id="reviewCount">0 / 800</span>
+            </div>
+            <div class="field-meta">
+              <span class="field-hint">建議至少寫 10 個字。</span>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">送出心得 →</button>
+            <button type="reset" class="btn btn-secondary" id="resetBtn">清除重填</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- 送出後顯示 -->
+      <div class="feedback-result" id="feedbackResult" aria-live="polite">
+        <div class="result-tag">SUBMITTED / 已完成</div>
+        <h3>謝謝你的觀後心得！</h3>
+
+        <div class="result-row">
+          <div class="result-label">姓名</div>
+          <div class="result-value" id="resultName"></div>
+        </div>
+
+        <div class="result-row">
+          <div class="result-label">觀後心得</div>
+          <div class="result-value" id="resultReview"></div>
+        </div>
+
+        <div class="result-row">
+          <div class="result-label">填寫時間</div>
+          <div class="result-value" id="resultTime"></div>
+        </div>
+
+        <div class="result-actions">
+          <button type="button" class="btn btn-primary" id="copyBtn">複製內容</button>
+          <button type="button" class="btn btn-secondary" id="editBtn">重新填寫</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>
+      <strong>Stray Kids · RUN IT 首爾場</strong>
+      <br>
+      粉絲製作的音樂與舞台介紹專題
+    </div>
+
+    <div>
+      本網站為非官方粉絲專題，僅供介紹與交流。
+      <br>
+      圖片及影片權利歸原權利人所有。
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="返回頁面頂端">
+    ↑
+  </button>
+
+  <script>
+    // 捲動時顯示區塊
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12
+      });
+
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add("show"));
+    }
+
+    // 返回頂端按鈕
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+      backTop.classList.toggle("visible", window.scrollY > 500);
+    }, { passive: true });
+
+    backTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    // ===== 新增：觀後心得量表 =====
+    (function () {
+      const form = document.getElementById("feedbackForm");
+      const box = document.getElementById("feedbackBox");
+      const result = document.getElementById("feedbackResult");
+
+      const nameInput = document.getElementById("nameInput");
+      const reviewInput = document.getElementById("reviewInput");
+      const nameField = document.getElementById("nameField");
+      const reviewField = document.getElementById("reviewField");
+      const nameError = document.getElementById("nameError");
+      const reviewError = document.getElementById("reviewError");
+      const reviewCount = document.getElementById("reviewCount");
+
+      const resultName = document.getElementById("resultName");
+      const resultReview = document.getElementById("resultReview");
+      const resultTime = document.getElementById("resultTime");
+      const copyBtn = document.getElementById("copyBtn");
+      const editBtn = document.getElementById("editBtn");
+
+      const MIN_LENGTH = 10;
+
+      function updateCount() {
+        reviewCount.textContent = reviewInput.value.length + " / 800";
+      }
+
+      function setError(field, errorEl, message) {
+        field.classList.toggle("invalid", Boolean(message));
+        errorEl.textContent = message || "";
+      }
+
+      reviewInput.addEventListener("input", () => {
+        updateCount();
+        if (reviewInput.value.trim().length >= MIN_LENGTH) {
+          setError(reviewField, reviewError, "");
+        }
+      });
+
+      nameInput.addEventListener("input", () => {
+        if (nameInput.value.trim()) {
+          setError(nameField, nameError, "");
+        }
+      });
+
+      form.addEventListener("reset", () => {
+        setError(nameField, nameError, "");
+        setError(reviewField, reviewError, "");
+        setTimeout(updateCount, 0);
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = nameInput.value.trim();
+        const review = reviewInput.value.trim();
+        let valid = true;
+
+        if (!name) {
+          setError(nameField, nameError, "請輸入你的姓名。");
+          valid = false;
+        } else {
+          setError(nameField, nameError, "");
+        }
+
+        if (!review) {
+          setError(reviewField, reviewError, "請寫下你的觀後心得。");
+          valid = false;
+        } else if (review.length < MIN_LENGTH) {
+          setError(reviewField, reviewError, "心得至少需要 " + MIN_LENGTH + " 個字。");
+          valid = false;
+        } else {
+          setError(reviewField, reviewError, "");
+        }
+
+        if (!valid) {
+          (!name ? nameInput : reviewInput).focus();
+          return;
+        }
+
+        const now = new Date();
+        const timeText = now.toLocaleString("zh-TW", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit"
+        });
+
+        resultName.textContent = name;
+        resultReview.textContent = review;
+        resultTime.textContent = timeText;
+
+        box.style.display = "none";
+        result.classList.add("show");
+        result.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+
+      editBtn.addEventListener("click", () => {
+        result.classList.remove("show");
+        box.style.display = "block";
+        box.classList.add("show");
+        nameInput.focus();
+      });
+
+      copyBtn.addEventListener("click", () => {
+        const text =
+          "【RUN IT 觀後心得】\n" +
+          "姓名：" + resultName.textContent + "\n" +
+          "填寫時間：" + resultTime.textContent + "\n\n" +
+          resultReview.textContent;
+
+        const done = () => {
+          copyBtn.textContent = "已複製 ✓";
+          setTimeout(() => { copyBtn.textContent = "複製內容"; }, 2000);
+        };
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+        } else {
+          fallbackCopy(text, done);
+        }
+      });
+
+      function fallbackCopy(text, callback) {
+        const temp = document.createElement("textarea");
+        temp.value = text;
+        temp.style.position = "fixed";
+        temp.style.opacity = "0";
+        document.body.appendChild(temp);
+        temp.select();
+        try {
+          document.execCommand("copy");
+          callback();
+        } catch (err) {
+          alert("複製失敗，請手動選取文字複製。");
+        }
+        document.body.removeChild(temp);
+      }
+    })();
+  </script>
+
+</body>
+</html>
